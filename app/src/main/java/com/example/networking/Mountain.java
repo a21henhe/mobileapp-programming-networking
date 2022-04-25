@@ -6,6 +6,10 @@ public class Mountain {
     private String location;
     private int height;
 
+    public String getName() {
+        return name;
+    }
+
     public Mountain(){
         name="Saknar namn";
         location="Saknar location";

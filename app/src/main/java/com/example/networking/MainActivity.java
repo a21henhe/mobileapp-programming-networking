@@ -2,10 +2,21 @@ package com.example.networking;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.ViewGroup;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 
 @SuppressWarnings("FieldCanBeLocal")
 public class MainActivity extends AppCompatActivity implements JsonTask.JsonTaskListener {
@@ -19,7 +30,26 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        listOfMountains = new ArrayList<>(Arrays.asList(
+                new Mountain("berg1", "sverige", 100),
+                new Mountain("berg2", "sverige", 100),
+                new Mountain("berg3", "sverige", 100)
+        ));
+
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, listOfMountains, new RecyclerViewAdapter.OnClickListener() {
+            @Override
+            public void onClick(Mountain item) {
+                Toast.makeText(MainActivity.this, item.getName(), Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+        RecyclerView view = findViewById(R.id.recycler_view);
+        view.setLayoutManager(new LinearLayoutManager(this));
+        view.setAdapter(adapter);
+
         new JsonFile(this, this).execute(JSON_FILE);
+
     }
 
     @Override
