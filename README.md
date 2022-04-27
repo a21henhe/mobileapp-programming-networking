@@ -8,6 +8,8 @@ en RecyclerView och ett custom RecyclerView_item, vilket är den view som bygger
 
 
 MainActivity:
+
+
 ```
 public class MainActivity extends AppCompatActivity implements JsonTask.JsonTaskListener {
 
@@ -56,6 +58,8 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
 
 
 RecyclerViewAdapter:
+
+
 
 ```package com.example.networking;
 
@@ -116,9 +120,9 @@ RecyclerViewAdapter:
        public interface OnClickListener {
            void onClick(Mountain item);
        }
-   }```
+   }
 
-
+  ```
 
 
 ![](recyclerview.png)
