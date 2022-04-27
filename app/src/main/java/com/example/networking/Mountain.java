@@ -28,4 +28,7 @@ public class Mountain {
         return tmp;
     }
 
+    public String toString(){
+        return name;
+    }
 }

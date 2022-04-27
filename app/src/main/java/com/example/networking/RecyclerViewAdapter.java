@@ -31,7 +31,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.title.setText(listOfMountains.get(position).getName());
+        holder.title.setText(listOfMountains.get(position).toString());
     }
 
     @Override
